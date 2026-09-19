@@ -507,7 +507,34 @@
             window.open(`https://wa.me/6288989556200?text=${encodeURIComponent(text)}`, '_blank');
         }
     </script>
-    <!-- Vercel Analytics untuk HTML Murni -->
+    <!-- ======================================================== -->
+    <!-- JAVASCRIPT UTAMA (LETAKKAN DI PALING BAHWA SEBELUM </body>) -->
+    <!-- ======================================================== -->
+    <script>
+        // Inisialisasi Ikon Lucide saat halaman dimuat
+        window.onload = function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        };
+
+        // TAMBAHKAN FUNGSI MENU HP (POIN 2) DI SINI:
+        function toggleMobileMenu() {
+            var menu = document.getElementById('mobileMenu');
+            if (menu) {
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                } else {
+                    menu.classList.add('hidden');
+                }
+            }
+        }
+        
+        // Fungsi JavaScript lainnya milik Anda (seperti filterProjects, sendWA, dll.) tetap di bawahnya
+    </script>
+
+    <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
-</body>
+
+</body> <!-- TAG PENUTUP BODY -->
 </html>
