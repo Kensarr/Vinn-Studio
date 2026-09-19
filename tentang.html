@@ -70,26 +70,47 @@
 </head>
 <body class="bg-void text-neutral-400 antialiased selection:bg-white selection:text-black min-h-screen flex flex-col">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-40 bg-black/80 backdrop-blur-lg border-b border-fine">
+    <!-- HEADER RESPONSIF (SAMAKAN DENGAN INDEX.HTML) -->
+    <header class="sticky top-0 z-40 bg-black/90 backdrop-blur-lg border-b border-fine">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo Brand -->
             <a href="index.html" class="flex items-center gap-2.5 text-white font-medium tracking-tight text-sm">
                 <span class="w-2 h-2 rounded-full bg-white"></span>
                 <span class="font-mono tracking-wider text-xs">VINNSTUDIO</span>
             </a>
 
-            <nav class="hidden sm:flex items-center gap-8 text-xs font-mono text-neutral-400">
-                <a href="index.html" class="hover:text-white transition-colors">← Beranda</a>
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-mono text-neutral-400">
                 <a href="index.html#portofolio" class="hover:text-white transition-colors">Portofolio</a>
+                <a href="index.html#layanan" class="hover:text-white transition-colors">Layanan</a>
                 <a href="index.html#harga" class="hover:text-white transition-colors">Harga</a>
+                <a href="tentang.html" class="text-white font-medium transition-colors">Tentang Kami</a>
+                <a href="index.html#kontak" class="hover:text-white transition-colors">Kontak</a>
             </nav>
 
-            <a href="https://wa.me/6288989556200?text=Halo%20Vinnstudio,%20saya%20ingin%20diskusi" 
-               target="_blank" 
-               class="px-3.5 py-1.5 rounded border border-neutral-700 text-white hover:bg-white hover:text-black font-mono text-xs transition-all flex items-center gap-1.5">
-                <span>Hubungi WA</span>
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </a>
+            <!-- Tombol Kanan & Tombol Menu HP -->
+            <div class="flex items-center gap-2.5">
+                <a href="https://wa.me/6288989556200?text=Halo%20Vinnstudio,%20saya%20ingin%20diskusi" 
+                   target="_blank" 
+                   class="px-3 py-1.5 rounded border border-neutral-700 text-white hover:bg-white hover:text-black font-mono text-xs transition-all flex items-center gap-1.5">
+                    <span>Hubungi WA</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+
+                <!-- Tombol MENU Khusus HP -->
+                <button type="button" onclick="toggleMobileMenu()" class="md:hidden px-2 py-1.5 rounded border border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-600 focus:outline-none">
+                    <span class="font-mono text-xs">MENU</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dropdown Menu khusus HP -->
+        <div id="mobileMenu" class="hidden md:hidden bg-surface border-b border-fine px-6 py-4 space-y-3 font-mono text-xs text-neutral-400">
+            <a href="index.html#portofolio" onclick="toggleMobileMenu()" class="block hover:text-white py-1.5 border-b border-neutral-900">Portofolio</a>
+            <a href="index.html#layanan" onclick="toggleMobileMenu()" class="block hover:text-white py-1.5 border-b border-neutral-900">Layanan</a>
+            <a href="index.html#harga" onclick="toggleMobileMenu()" class="block hover:text-white py-1.5 border-b border-neutral-900">Harga</a>
+            <a href="tentang.html" onclick="toggleMobileMenu()" class="block text-white font-medium py-1.5 border-b border-neutral-900">Tentang Kami</a>
+            <a href="index.html#kontak" onclick="toggleMobileMenu()" class="block hover:text-white py-1.5">Kontak</a>
         </div>
     </header>
 
@@ -107,7 +128,7 @@
             </div>
         </section>
 
-        <!-- ANGKA METRIK & PENCAIPAN -->
+        <!-- ANGKA METRIK -->
         <section class="py-12 border-b border-fine bg-surface/50">
             <div class="max-w-5xl mx-auto px-6">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 font-mono">
@@ -207,12 +228,12 @@
                         <li>
                             <a href="mailto:info@vinnstudio.my.id" class="hover:text-white transition-colors flex items-center gap-2">
                                 <i data-lucide="mail" class="w-3.5 h-3.5 text-neutral-500"></i>
-                                <span>info@vinnstudio.my.id</span>
+                                <span>support@vinnstudio.my.id</span>
                             </a>
                         </li>
                         <li class="flex items-center gap-2 text-neutral-500">
                             <i data-lucide="map-pin" class="w-3.5 h-3.5 text-neutral-500"></i>
-                            <span>Indonesia</span>
+                            <span>Malang, Jawa Timur, Indonesia</span>
                         </li>
                     </ul>
                 </div>
@@ -220,7 +241,7 @@
                 <div>
                     <span class="text-neutral-400 uppercase tracking-widest block mb-3">// IKUTI KAMI</span>
                     <div class="flex items-center gap-3">
-                        <a href="https://instagram.com/vinnstudio" target="_blank" class="p-2.5 rounded bg-surface border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-colors">
+                        <a href="https://instagram.com/alvn_knsr" target="_blank" class="p-2.5 rounded bg-surface border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-colors">
                             <i data-lucide="instagram" class="w-4 h-4"></i>
                         </a>
                         <a href="https://wa.me/6288989556200" target="_blank" class="p-2.5 rounded bg-surface border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-colors">
@@ -247,6 +268,18 @@
                 lucide.createIcons();
             }
         };
+
+        // FUNGSI TOGGLE MENU HP
+        function toggleMobileMenu() {
+            var menu = document.getElementById('mobileMenu');
+            if (menu) {
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                } else {
+                    menu.classList.add('hidden');
+                }
+            }
+        }
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
