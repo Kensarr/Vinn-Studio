@@ -1,69 +1,97 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami - Vinnstudio</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['"Geist Mono"', 'monospace'],
-                    },
-                    colors: {
-                        void: '#000000',
-                        surface: '#0a0a0a',
-                        panel: '#121212',
-                        border: '#222222',
-                        subtle: '#333333',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { background-color: #000000; color: #a3a3a3; font-family: 'Inter', sans-serif; }
-        .border-fine { border-color: #1f1f1f; }
-    </style>
-</head>
-<body class="bg-void text-neutral-400 min-h-screen flex flex-col">
-
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 bg-black/80 backdrop-blur-lg border-b border-fine">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2.5 text-white font-medium text-sm">
-                <span class="w-2 h-2 rounded-full bg-white"></span>
-                <span class="font-mono tracking-wider text-xs">VINNSTUDIO</span>
-            </a>
-
-            <!-- Navigasi kembali ke Beranda -->
-            <nav class="flex items-center gap-8 text-xs font-mono text-neutral-400">
-                <a href="index.html" class="hover:text-white transition-colors">← Beranda</a>
-            </nav>
+<!-- KALKULATOR HARGA INTERAKTIF -->
+<section class="py-20 border-b border-fine bg-surface/30">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="mb-10 text-center">
+            <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest block mb-2">// ESTIMASI CEPAT</span>
+            <h2 class="text-2xl font-medium text-white">Hitung Estimasi Proyek Anda</h2>
+            <p class="text-xs text-neutral-400 mt-2">Pilih kebutuhan website Anda untuk melihat perkiraan biaya transparan.</p>
         </div>
-    </header>
 
-    <!-- Konten Utama Halaman Kedua -->
-    <main class="flex-1 max-w-5xl mx-auto px-6 py-20">
-        <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest block mb-2">// TENTANG VINNSTUDIO</span>
-        <h1 class="text-3xl sm:text-5xl font-semibold text-white mb-6">Tentang Kami</h1>
-        <p class="text-neutral-400 text-sm leading-relaxed max-w-2xl">
-            Ini adalah halaman kedua dari website Vinnstudio. Di sini Anda bisa menuliskan cerita studio, visi misi, atau tim di balik Vinnstudio.
-        </p>
-    </main>
+        <div class="p-6 rounded bg-surface border border-fine space-y-6 font-mono text-xs">
+            <!-- Pilih Tipe Web -->
+            <div>
+                <label class="block text-neutral-400 uppercase mb-2">1. Pilih Tipe Website</label>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <button type="button" onclick="setCalcType('landing', 100000)" id="btn-landing" class="calc-type-btn p-3 rounded border border-white text-white text-left">
+                        <div class="font-bold text-sm">Landing Page</div>
+                        <div class="text-[10px] text-neutral-400 mt-1">Rp 100.000</div>
+                    </button>
+                    <button type="button" onclick="setCalcType('company', 500000)" id="btn-company" class="calc-type-btn p-3 rounded border border-neutral-800 text-neutral-400 text-left hover:border-neutral-600">
+                        <div class="font-bold text-sm">Company Profile</div>
+                        <div class="text-[10px] text-neutral-400 mt-1">Rp 500.000</div>
+                    </button>
+                    <button type="button" onclick="setCalcType('custom', 250000)" id="btn-custom" class="calc-type-btn p-3 rounded border border-neutral-800 text-neutral-400 text-left hover:border-neutral-600">
+                        <div class="font-bold text-sm">Custom System</div>
+                        <div class="text-[10px] text-neutral-400 mt-1">Rp 250.000+</div>
+                    </button>
+                </div>
+            </div>
 
-    <script>
-        window.onload = function() { lucide.createIcons(); };
-    </script>
-</body>
-</html>
+            <!-- Add-ons / Fitur Tambahan -->
+            <div>
+                <label class="block text-neutral-400 uppercase mb-2">2. Fitur Tambahan (Opsional)</label>
+                <div class="space-y-2">
+                    <label class="flex items-center justify-between p-3 rounded bg-void border border-neutral-800 cursor-pointer">
+                        <span class="text-neutral-300"><input type="checkbox" id="opt-domain" onchange="updateTotal()" class="mr-2"> Domain .COM (1 Tahun)</span>
+                        <span class="text-neutral-500">+Rp 180.000</span>
+                    </label>
+                    <label class="flex items-center justify-between p-3 rounded bg-void border border-neutral-800 cursor-pointer">
+                        <span class="text-neutral-300"><input type="checkbox" id="opt-speed" onchange="updateTotal()" class="mr-2"> Garansi Loading &lt; 1 Detik</span>
+                        <span class="text-neutral-500">+Rp 50.000</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Total Biaya & Tombol Order -->
+            <div class="pt-6 border-t border-fine flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                    <span class="text-neutral-500 block text-[10px] uppercase">Total Estimasi</span>
+                    <span id="calc-total" class="text-2xl font-bold text-white">Rp 100.000</span>
+                </div>
+                <button type="button" onclick="sendCalcWA()" class="w-full sm:w-auto px-6 py-3 rounded bg-white text-black font-medium hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2">
+                    <span>Pesan Sesuai Estimasi Ini</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPT KALKULATOR -->
+<script>
+    let selectedType = 'Landing Page';
+    let basePrice = 100000;
+
+    function setCalcType(type, price) {
+        basePrice = price;
+        document.querySelectorAll('.calc-type-btn').forEach(b => {
+            b.classList.remove('border-white', 'text-white');
+            b.classList.add('border-neutral-800', 'text-neutral-400');
+        });
+
+        const activeBtn = document.getElementById(`btn-${type}`);
+        activeBtn.classList.remove('border-neutral-800', 'text-neutral-400');
+        activeBtn.classList.add('border-white', 'text-white');
+
+        selectedType = type === 'landing' ? 'Landing Page' : (type === 'company' ? 'Company Profile' : 'Custom System');
+        updateTotal();
+    }
+
+    function updateTotal() {
+        let total = basePrice;
+        if(document.getElementById('opt-domain').checked) total += 180000;
+        if(document.getElementById('opt-speed').checked) total += 50000;
+
+        document.getElementById('calc-total').innerText = `Rp ${total.toLocaleString('id-ID')}`;
+    }
+
+    function sendCalcWA() {
+        const total = document.getElementById('calc-total').innerText;
+        let addons = [];
+        if(document.getElementById('opt-domain').checked) addons.push('Domain .COM');
+        if(document.getElementById('opt-speed').checked) addons.push('Garansi Loading Speed');
+
+        const text = `Halo Vinnstudio,\n\nSaya ingin memesan via Kalkulator Web:\n- Tipe Web: ${selectedType}\n- Add-ons: ${addons.length > 0 ? addons.join(', ') : 'Tidak ada'}\n- Total Estimasi: ${total}`;
+        window.open(`https://wa.me/6288989556200?text=${encodeURIComponent(text)}`, '_blank');
+    }
+</script>
