@@ -69,32 +69,49 @@
         }
     </style>
 </head>
-<body class="bg-void text-neutral-400 antialiased selection:bg-white selection:text-black min-h-screen flex flex-col">
+<!-- HEADER / NAVIGATION (RESPONSIF HP & LAPTOP) -->
+<header class="sticky top-0 z-40 bg-black/90 backdrop-blur-lg border-b border-fine">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <!-- Logo Brand -->
+        <a href="index.html" class="flex items-center gap-2.5 text-white font-medium tracking-tight text-sm">
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+            <span class="font-mono tracking-wider text-xs">VINNSTUDIO</span>
+        </a>
 
-    <header class="sticky top-0 z-40 bg-black/80 backdrop-blur-lg border-b border-fine">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2.5 text-white font-medium tracking-tight text-sm">
-                <span class="w-2 h-2 rounded-full bg-white"></span>
-                <span class="font-mono tracking-wider text-xs">VINNSTUDIO</span>
-            </a>
+        <!-- Navigasi Komputer / Desktop -->
+        <nav class="hidden md:flex items-center gap-8 text-xs font-mono text-neutral-400">
+            <a href="index.html#portofolio" class="hover:text-white transition-colors">Portofolio</a>
+            <a href="index.html#layanan" class="hover:text-white transition-colors">Layanan</a>
+            <a href="index.html#harga" class="hover:text-white transition-colors">Harga</a>
+            <a href="tentang.html" class="hover:text-white transition-colors">Tentang Kami</a>
+            <a href="index.html#kontak" class="hover:text-white transition-colors">Kontak</a>
+        </nav>
 
-            <nav class="hidden sm:flex items-center gap-8 text-xs font-mono text-neutral-400">
-                <a href="#portofolio" class="hover:text-white transition-colors">Portofolio</a>
-                <a href="#layanan" class="hover:text-white transition-colors">Layanan</a>
-                <a href="#harga" class="hover:text-white transition-colors">Harga</a>
-                <a href="#kontak" class="hover:text-white transition-colors">Kontak</a>
-                <a href="tentang.html" class="hover:text-white transition-colors">Tentang Kami</a>
-            </nav>
-
+        <!-- Tombol Aksi & Toggle Hamburger HP -->
+        <div class="flex items-center gap-3">
             <a href="https://wa.me/6288989556200?text=Halo%20Vinnstudio,%20saya%20ingin%20diskusi" 
                target="_blank" 
-               class="px-3.5 py-1.5 rounded border border-neutral-700 text-white hover:bg-white hover:text-black font-mono text-xs transition-all flex items-center gap-1.5">
+               class="px-3 py-1.5 rounded border border-neutral-700 text-white hover:bg-white hover:text-black font-mono text-xs transition-all flex items-center gap-1.5">
                 <span>Hubungi WA</span>
                 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </a>
-        </div>
-    </header>
 
+            <!-- Tombol Hamburger khusus Layar HP -->
+            <button onclick="toggleMobileMenu()" class="md:hidden p-1.5 text-neutral-400 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+                <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Dropdown Menu khusus Tampilan HP -->
+    <div id="mobileMenu" class="hidden md:hidden bg-surface border-b border-fine px-6 py-4 space-y-3 font-mono text-xs text-neutral-400">
+        <a href="index.html#portofolio" onclick="toggleMobileMenu()" class="block hover:text-white py-1">Portofolio</a>
+        <a href="index.html#layanan" onclick="toggleMobileMenu()" class="block hover:text-white py-1">Layanan</a>
+        <a href="index.html#harga" onclick="toggleMobileMenu()" class="block hover:text-white py-1">Harga</a>
+        <a href="tentang.html" onclick="toggleMobileMenu()" class="block text-white font-medium py-1">Tentang Kami</a>
+        <a href="index.html#kontak" onclick="toggleMobileMenu()" class="block hover:text-white py-1">Kontak</a>
+    </div>
+</header>
     <main class="flex-1">
         <section class="py-24 sm:py-32 border-b border-fine">
             <div class="max-w-5xl mx-auto px-6">
