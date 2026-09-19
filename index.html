@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinnstudio — Web Design & Development</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"Geist Mono"', 'monospace'],
+                    },
+                    colors: {
+                        void: '#000000',
+                        surface: '#0a0a0a',
+                        panel: '#121212',
+                        border: '#222222',
+                        subtle: '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #a3a3a3;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .border-fine {
+            border-color: #1f1f1f;
+        }
+
+        .hover-lift {
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            border-color: #404040;
+        }
+
+        /* Minimal custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #404040;
+        }
+    </style>
+</head>
+<body class="bg-void text-neutral-400 antialiased selection:bg-white selection:text-black min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-40 bg-black/80 backdrop-blur-lg border-b border-fine">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5 text-white font-medium tracking-tight text-sm">
+                <span class="w-2 h-2 rounded-full bg-white"></span>
+                <span class="font-mono tracking-wider text-xs">VINNSTUDIO</span>
+            </a>
+
+            <nav class="hidden sm:flex items-center gap-8 text-xs font-mono text-neutral-400">
+                <a href="#portofolio" class="hover:text-white transition-colors">Portofolio</a>
+                <a href="#layanan" class="hover:text-white transition-colors">Layanan</a>
+                <a href="#harga" class="hover:text-white transition-colors">Harga</a>
+                <a href="#kontak" class="hover:text-white transition-colors">Kontak</a>
+            </nav>
+
+            <a href="https://wa.me/6288989556200?text=Halo%20Vinnstudio,%20saya%20ingin%20diskusi" 
+               target="_blank" 
+               class="px-3.5 py-1.5 rounded border border-neutral-700 text-white hover:bg-white hover:text-black font-mono text-xs transition-all flex items-center gap-1.5">
+                <span>Hubungi WA</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        <section class="py-24 sm:py-32 border-b border-fine">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="inline-flex items-center gap-2 text-[11px] font-mono text-neutral-400 mb-8 border border-neutral-800 rounded-full px-3 py-1 bg-surface">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    <span>Tersedia untuk proyek baru</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-semibold text-white tracking-tight leading-[1.08] mb-8 max-w-3xl">
+                    Website bersih.<br>
+                    Cepat & tanpa kerumitan.
+                </h1>
+
+                <p class="text-neutral-400 text-sm sm:text-base max-w-xl leading-relaxed mb-10 font-normal">
+                    Vinnstudio membangun website minimalis yang fokus pada esensi bisnis kamu: tampilan rapi di ponsel, performa tinggi, dan konversi pesan langsung ke WhatsApp.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 text-xs font-mono">
+                    <a href="#portofolio" class="px-5 py-3 rounded bg-white text-black font-medium hover:bg-neutral-200 transition-colors flex items-center gap-2">
+                        <span>Lihat Karya Portofolio</span>
+                        <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <a href="#harga" class="px-5 py-3 rounded border border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-600 transition-colors">
+                        Pilih Paket Website
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 01. PORTOFOLIO (Dipindahkan ke bagian atas) -->
+        <section id="portofolio" class="py-20 border-b border-fine">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+                    <div>
+                        <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest block mb-2">// 01. PORTOFOLIO TERPILIH</span>
+                        <p class="text-xs text-neutral-400 max-w-md leading-relaxed">
+                            Kumpulan proyek pilihan yang dirancang dengan struktur bersih, fokus pada tujuan bisnis, dan performa tinggi di semua perangkat.
+                        </p>
+                    </div>
+                    <div class="flex gap-2 font-mono text-xs">
+                        <button onclick="filterProjects('all')" class="port-btn active text-white underline underline-offset-4">Semua</button>
+                        <span class="text-neutral-700">/</span>
+                        <button onclick="filterProjects('landing')" class="port-btn text-neutral-500 hover:text-white">Landing Page</button>
+                        <span class="text-neutral-700">/</span>
+                        <button onclick="filterProjects('company')" class="port-btn text-neutral-500 hover:text-white">Company Profile</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projectsGrid">
+                    <div class="project-card landing group cursor-pointer p-5 rounded bg-surface border border-fine hover-lift" onclick="showModal('VinnStore', 'Landing Page', 'Website penjualan biji kopi lokal dengan tombol checkout langsung ke WA.', 'vinn.png')">
+                        <div class="aspect-[16/10] bg-neutral-900 rounded overflow-hidden mb-4 border border-neutral-800">
+                            <img src="vinn.png" alt="VinnStore" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-sm font-medium text-white group-hover:underline">VinnStore</h3>
+                            <span class="font-mono text-[11px] text-neutral-500">Landing Page</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card company group cursor-pointer p-5 rounded bg-surface border border-fine hover-lift" onclick="showModal('ArchStudio Architectural', 'Company Profile', 'Profil studio arsitektur minimalis lengkap dengan galeri karya.', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80')">
+                        <div class="aspect-[16/10] bg-neutral-900 rounded overflow-hidden mb-4 border border-neutral-800">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="ArchStudio" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-sm font-medium text-white group-hover:underline">ArchStudio Architectural</h3>
+                            <span class="font-mono text-[11px] text-neutral-500">Company Profile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02. LAYANAN -->
+        <section id="layanan" class="py-20 border-b border-fine">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-16">
+                    <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">// 02. LAYANAN</span>
+                    <span class="font-mono text-xs text-neutral-600">3 Pilihan Utama</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 rounded bg-surface border border-fine hover-lift flex flex-col justify-between">
+                        <div>
+                            <span class="font-mono text-xs text-neutral-600 block mb-4">01 / LANDING PAGE</span>
+                            <h3 class="text-lg font-medium text-white mb-2">Landing Page Penjualan</h3>
+                            <p class="text-xs text-neutral-400 leading-relaxed mb-6">
+                                1 halaman khusus yang fokus menjelaskan produk atau jasa kamu dengan tombol aksi cepat ke WhatsApp.
+                            </p>
+                        </div>
+                        <ul class="text-xs font-mono text-neutral-500 space-y-2 pt-4 border-t border-fine">
+                            <li>• Pengerjaan 3-5 Hari</li>
+                            <li>• Desain Ringkas & Cepat</li>
+                            <li>• Form Pesan WhatsApp</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-6 rounded bg-surface border border-fine hover-lift flex flex-col justify-between">
+                        <div>
+                            <span class="font-mono text-xs text-neutral-600 block mb-4">02 / PROFILE</span>
+                            <h3 class="text-lg font-medium text-white mb-2">Company Profile</h3>
+                            <p class="text-xs text-neutral-400 leading-relaxed mb-6">
+                                Website profil resmi untuk bisnis, kantor, atau studio. Menampilkan identitas, layanan, dan galeri secara profesional.
+                            </p>
+                        </div>
+                        <ul class="text-xs font-mono text-neutral-500 space-y-2 pt-4 border-t border-fine">
+                            <li>• Multi-Halaman Ringkas</li>
+                            <li>• Gratis Domain .COM (1 Thn)</li>
+                            <li>• Galeri Foto & Kontak</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-6 rounded bg-surface border border-fine hover-lift flex flex-col justify-between">
+                        <div>
+                            <span class="font-mono text-xs text-neutral-600 block mb-4">03 / CUSTOM</span>
+                            <h3 class="text-lg font-medium text-white mb-2">Custom System</h3>
+                            <p class="text-xs text-neutral-400 leading-relaxed mb-6">
+                                Pembuatan fitur khusus seperti kalkulator hitung otomatis, katalog interaktif, atau form pendaftaran.
+                            </p>
+                        </div>
+                        <ul class="text-xs font-mono text-neutral-500 space-y-2 pt-4 border-t border-fine">
+                            <li>• Alur Sesuai Request</li>
+                            <li>• Struktur Kode Bersih</li>
+                            <li>• Integrasi Database</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03. HARGA & PAKET -->
+        <section id="harga" class="py-20 border-b border-fine bg-surface/50">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-16">
+                    <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">// 03. HARGA & PAKET</span>
+                    <span class="font-mono text-xs text-neutral-600">Transparan tanpa biaya tersembunyi</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Pricing Item 1 -->
+                    <div class="p-6 rounded bg-surface border border-fine flex flex-col justify-between">
+                        <div>
+                            <span class="font-mono text-xs text-neutral-500 block mb-2">PAKET 01</span>
+                            <h3 class="text-xl font-medium text-white mb-1">Landing Page</h3>
+                            <p class="text-xs text-neutral-400 mb-6">Cocok untuk 1 produk / promo jasa.</p>
+
+                            <div class="text-2xl font-mono text-white mb-6 pb-6 border-b border-fine">
+                                Rp 1.500.000
+                            </div>
+
+                            <ul class="text-xs font-mono text-neutral-400 space-y-3 mb-8">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> 1 Halaman Responsif</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> Direct Order WhatsApp</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> Estimasi 3-5 Hari</li>
+                            </ul>
+                        </div>
+
+                        <a href="https://wa.me/6281234567890?text=Halo%20Vinnstudio,%20saya%20mau%20order%20Paket%20Landing%20Page%20(Rp%201.500.000)" 
+                           target="_blank" 
+                           class="w-full py-2.5 rounded border border-neutral-700 hover:bg-white hover:text-black text-white font-mono text-xs text-center transition-colors block">
+                            Order Landing Page
+                        </a>
+                    </div>
+
+                    <!-- Pricing Item 2 (Featured) -->
+                    <div class="p-6 rounded bg-surface border border-neutral-500 flex flex-col justify-between relative">
+                        <span class="absolute -top-2.5 right-4 bg-white text-black text-[10px] font-mono px-2 py-0.5 rounded">Rekomendasi</span>
+
+                        <div>
+                            <span class="font-mono text-xs text-neutral-400 block mb-2">PAKET 02</span>
+                            <h3 class="text-xl font-medium text-white mb-1">Company Profile</h3>
+                            <p class="text-xs text-neutral-400 mb-6">Untuk profil bisnis & reputasi resmi.</p>
+
+                            <div class="text-2xl font-mono text-white mb-6 pb-6 border-b border-fine">
+                                Rp 3.500.000
+                            </div>
+
+                            <ul class="text-xs font-mono text-neutral-400 space-y-3 mb-8">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white"></i> Hingga 5 Halaman</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white"></i> Domain .COM (1 Tahun)</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-white"></i> Galeri & Form Kontak</li>
+                            </ul>
+                        </div>
+
+                        <a href="https://wa.me/6281234567890?text=Halo%20Vinnstudio,%20saya%20mau%20order%20Paket%20Company%20Profile%20(Rp%203.500.000)" 
+                           target="_blank" 
+                           class="w-full py-2.5 rounded bg-white text-black hover:bg-neutral-200 font-mono text-xs text-center transition-colors block font-medium">
+                            Order Company Profile
+                        </a>
+                    </div>
+
+                    <!-- Pricing Item 3 -->
+                    <div class="p-6 rounded bg-surface border border-fine flex flex-col justify-between">
+                        <div>
+                            <span class="font-mono text-xs text-neutral-500 block mb-2">PAKET 03</span>
+                            <h3 class="text-xl font-medium text-white mb-1">Custom System</h3>
+                            <p class="text-xs text-neutral-400 mb-6">Untuk web dengan fitur khusus.</p>
+
+                            <div class="text-2xl font-mono text-white mb-6 pb-6 border-b border-fine">
+                                Rp 5.500.000+
+                            </div>
+
+                            <ul class="text-xs font-mono text-neutral-400 space-y-3 mb-8">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> Fitur / Kalkulator Kustom</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> Dashboard Pengelolaan</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neutral-200"></i> Dukungan Pemeliharaan</li>
+                            </ul>
+                        </div>
+
+                        <a href="https://wa.me/6281234567890?text=Halo%20Vinnstudio,%20saya%20mau%20diskusi%20Paket%20Custom%20System" 
+                           target="_blank" 
+                           class="w-full py-2.5 rounded border border-neutral-700 hover:bg-white hover:text-black text-white font-mono text-xs text-center transition-colors block">
+                            Diskusi Proyek
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontak" class="py-20 border-b border-fine">
+            <div class="max-w-3xl mx-auto px-6">
+                <div class="mb-12 text-center">
+                    <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest block mb-2">// 04. KONTAK LANGSUNG</span>
+                    <h2 class="text-2xl font-medium text-white">Mulai Diskusi Proyek Kamu</h2>
+                </div>
+
+                <form onsubmit="sendWA(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-mono text-[11px] text-neutral-400 uppercase mb-1.5">Nama Kamu</label>
+                            <input type="text" id="waName" required placeholder="Nama lengkap" class="w-full bg-surface border border-neutral-800 rounded px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-neutral-500">
+                        </div>
+                        <div>
+                            <label class="block font-mono text-[11px] text-neutral-400 uppercase mb-1.5">Kebutuhan Website</label>
+                            <select id="waPackage" class="w-full bg-surface border border-neutral-800 rounded px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-neutral-500">
+                                <option value="Landing Page">Landing Page</option>
+                                <option value="Company Profile">Company Profile</option>
+                                <option value="Custom System">Custom System</option>
+                                <option value="Custom System">Setup Server</option>
+                                <option value="Custom System">Maintenance</option>
+                                <option value="Tanya-tanya Dulu">Tanya-tanya Dulu</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block font-mono text-[11px] text-neutral-400 uppercase mb-1.5">Catatan Ringkas</label>
+                        <textarea id="waNotes" rows="3" placeholder="Ceritakan singkat jenis usaha atau gambaran website..." class="w-full bg-surface border border-neutral-800 rounded px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-neutral-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-3 bg-white text-black font-mono text-xs font-medium rounded hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2">
+                        <span>Kirim via WhatsApp</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 bg-void border-t border-fine text-xs font-mono text-neutral-600">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                <span class="text-neutral-400">VINNSTUDIO</span>
+                <span>— Web Studio</span>
+            </div>
+            <p>© 2026 Vinnstudio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-surface border border-neutral-800 rounded-lg max-w-md w-full overflow-hidden p-6 relative">
+            <button onclick="hideModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-white">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+            <div class="aspect-video bg-neutral-900 rounded overflow-hidden mb-4 border border-neutral-800">
+                <img id="mImg" src="" class="w-full h-full object-cover">
+            </div>
+            <span id="mCat" class="font-mono text-[10px] text-neutral-400 block mb-1">CATEGORY</span>
+            <h3 id="mTitle" class="text-base font-medium text-white mb-2">Title</h3>
+            <p id="mDesc" class="text-xs text-neutral-400 leading-relaxed mb-6">Description</p>
+            
+            <div class="flex gap-2">
+                <a href="https://wa.me/6288989556200?text=Halo%20Vinnstudio,%20saya%20tertarik%20dengan%20referensi%20portofolio" target="_blank" class="flex-1 py-2 bg-white text-black font-mono text-xs text-center rounded font-medium">
+                    Pesan Seperti Ini
+                </a>
+                <button onclick="hideModal()" class="px-4 py-2 border border-neutral-800 text-neutral-400 font-mono text-xs rounded">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            lucide.createIcons();
+        };
+
+        function filterProjects(cat) {
+            const btns = document.querySelectorAll('.port-btn');
+            btns.forEach(b => {
+                b.classList.remove('text-white', 'underline', 'underline-offset-4');
+                b.classList.add('text-neutral-500');
+            });
+            event.target.classList.remove('text-neutral-500');
+            event.target.classList.add('text-white', 'underline', 'underline-offset-4');
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(c => {
+                if(cat === 'all' || c.classList.contains(cat)) {
+                    c.style.display = 'block';
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+        }
+
+        function showModal(title, cat, desc, img) {
+            document.getElementById('mTitle').innerText = title;
+            document.getElementById('mCat').innerText = cat.toUpperCase();
+            document.getElementById('mDesc').innerText = desc;
+            document.getElementById('mImg').src = img;
+            document.getElementById('modal').classList.remove('hidden');
+        }
+
+        function hideModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+
+        function sendWA(e) {
+            e.preventDefault();
+            const name = document.getElementById('waName').value;
+            const pkg = document.getElementById('waPackage').value;
+            const notes = document.getElementById('waNotes').value;
+
+            const text = `Halo Vinnstudio,\n\nNama: ${name}\nPilihan Paket: ${pkg}\nCatatan: ${notes || '-'}`;
+            window.open(`https://wa.me/6288989556200?text=${encodeURIComponent(text)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
