@@ -352,14 +352,71 @@
         </section>
     </main>
 
-    <footer class="py-8 bg-void border-t border-fine text-xs font-mono text-neutral-600">
-        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
-                <span class="text-neutral-400">VINNSTUDIO</span>
-                <span>— Web Studio</span>
+    <!-- FOOTER & KONTAKS (GAYA TAILWIND MINIMALIS) -->
+    <footer class="py-12 bg-void border-t border-fine text-xs font-mono">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-fine">
+                
+                <!-- Kolom 1: Profil Studio -->
+                <div>
+                    <div class="flex items-center gap-2 text-white font-medium mb-3">
+                        <span class="w-2 h-2 rounded-full bg-white"></span>
+                        <span class="tracking-wider text-xs">VINNSTUDIO</span>
+                    </div>
+                    <p class="text-neutral-500 font-sans leading-relaxed text-xs">
+                        Layanan pembuatan web design & development minimalis, fokus pada performa dan konversi WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Kolom 2: Kontak Langsung -->
+                <div>
+                    <span class="text-neutral-400 uppercase tracking-widest block mb-3">// KONTAKS</span>
+                    <ul class="space-y-2.5 text-neutral-400 font-sans">
+                        <li>
+                            <a href="https://wa.me/6288989556200" target="_blank" class="hover:text-white transition-colors flex items-center gap-2">
+                                <i data-lucide="message-square" class="w-3.5 h-3.5 text-neutral-500"></i>
+                                <span>+62 889-8955-6200</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@vinnstudio.my.id" class="hover:text-white transition-colors flex items-center gap-2">
+                                <i data-lucide="mail" class="w-3.5 h-3.5 text-neutral-500"></i>
+                                <span>support@vinnstudio.my.id</span>
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-2 text-neutral-500">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-neutral-500"></i>
+                            <span>Indonesia</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Media Sosial & Navigasi Cepat -->
+                <div>
+                    <span class="text-neutral-400 uppercase tracking-widest block mb-3">// IKUTI KAMI</span>
+                    <div class="flex items-center gap-3">
+                        <a href="https://instagram.com/vinnstudio" target="_blank" class="p-2.5 rounded bg-surface border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-colors">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://github.com/kensarr" target="_blank" class="p-2.5 rounded bg-surface border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-colors">
+                            <i data-lucide="github" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://wa.me/6288989556200" target="_blank" class="p-2.5 rounded bg-surface border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            <p>© 2026 Vinnstudio. All rights reserved.</p>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-600">
+                <p>© 2026 Vinnstudio. All rights reserved.</p>
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    <span>System Normal</span>
+                </div>
+            </div>
         </div>
     </footer>
 
